@@ -1,0 +1,258 @@
+{
+    "processes": {
+        "Marital Status": {
+            "component": "core/Repeat",
+            "metadata": {
+            }
+        },
+        "Am A Dependant": {
+            "component": "core/Repeat",
+            "metadata": {
+            }
+        },
+        "Number of Dependants": {
+            "component": "core/Repeat"
+        },
+        "Total Income": {
+            "component": "core/Repeat"
+        },
+        "Display": {
+            "component": "Output"
+        },
+        "A": {
+            "component": "A"
+        },
+        "B": {
+            "component": "B"
+        },
+        "C": {
+            "component": "C"
+        },
+        "F": {
+            "component": "F"
+        },
+        "D": {
+            "component": "core/Repeat"
+        },
+        "E": {
+            "component": "E"
+        },
+        "G": {
+            "component": "G"
+        },
+        "H": {
+            "component": "math/CountSum"
+        }
+    },
+    "connections": [
+        {
+            "data": "Married",
+            "tgt": {
+                "process": "Marital Status",
+                "port": "in"
+            }
+        },
+        {
+            "data": 4,
+            "tgt": {
+                "process": "Number of Dependants",
+                "port": "in"
+            }
+        },
+        {
+            "data": 40000,
+            "tgt": {
+                "process": "Total Income",
+                "port": "in"
+            }
+        },
+        {
+            "data": false,
+            "tgt": {
+                "process": "Am A Dependant",
+                "port": "in"
+            }
+        },
+        {
+            "data": 1,
+            "tgt": {
+                "process": "Number of Jobs",
+                "port": "in"
+            }
+        },
+        {
+            "data": true,
+            "tgt": {
+                "process": "E",
+                "port": "head_of_household"
+            }
+        },
+        {
+            "data": 0,
+            "tgt": {
+                "process": "F",
+                "port": "childcare_expenses"
+            }
+        },
+        {
+            "src": {
+                "process": "Am A Dependant",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "A",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "Marital Status",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "B",
+                "port": "marital_status"
+            }
+        },
+        {
+            "src": {
+                "process": "Number of Jobs",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "B",
+                "port": "num_jobs"
+            }
+        },
+        {
+            "src": {
+                "process": "Marital Status",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "C",
+                "port": "marital_status"
+            }
+        },
+        {
+            "src": {
+                "process": "Marital Status",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "G",
+                "port": "marital_status"
+            }
+        },
+        {
+            "src": {
+                "process": "Number of Dependants",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "D",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "Number of Dependants",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "G",
+                "port": "number_of_kids"
+            }
+        },
+        {
+            "src": {
+                "process": "Total Income",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "G",
+                "port": "total_income"
+            }
+        },
+        {
+            "src": {
+                "process": "A",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "B",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "C",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "D",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "F",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "G",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "E",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "H",
+                "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "H",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "Display",
+                "port": "in"
+            }
+        }
+    ]
+}

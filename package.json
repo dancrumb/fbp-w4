@@ -1,0 +1,28 @@
+{
+  "name": "fbp-w4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "w4": "noflo graphs/W4.json"
+  },
+  "author": "Dan Rumney <dancrumb@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "noflo-core": "^0.1.14",
+    "noflo-filesystem": "^1.0.6",
+    "noflo-math": "0.0.6"
+  },
+  "noflo": {
+    "components": {
+      "A": "./components/A.js",
+      "B": "./components/B.js",
+      "C": "./components/C.js",
+      "E": "./components/E.js",
+      "F": "./components/F.js",
+      "G": "./components/G.js"
+
+    }
+  }
+}
